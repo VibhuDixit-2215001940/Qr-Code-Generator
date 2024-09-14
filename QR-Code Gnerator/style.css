@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 0 15px;
+  min-height: 100vh;
+  align-items: center;
+  background: linear-gradient(180deg, #f0f0f0 50%, #7b5e57 50%);
+  justify-content: center;
+  color: #333;
+}
+
+.wrapper {
+  height: 270px;
+  max-width: 420px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 25px 30px 0;
+  transition: height 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper.active {
+  height: 540px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+header p {
+  margin-top: 8px;
+  color: #666;
+  font-size: 18px;
+}
+
+.wrapper .form {
+  margin: 25px 0 30px;
+}
+
+.form :where(input, button) {
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.form input {
+  font-size: 20px;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  color: #333;
+  background: #eee;
+}
+
+.form input:focus {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form input::placeholder {
+  color: #888;
+}
+
+.form button {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 25px;
+  font-size: 18px;
+  background: #555;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.form button:hover {
+  background: #444;
+}
+
+.form button:active {
+  transform: scale(0.98);
+}
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 40px 0;
+  border-radius: 8px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.wrapper.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.6s 0.1s ease;
+}
+
+.qr-code img {
+  width: 180px;
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    height: 260px;
+    padding: 20px 25px;
+  }
+  .wrapper.active {
+    height: 520px;
+  }
+  header p {
+    color: #888;
+  }
+  .form :where(input, button) {
+    height: 55px;
+  }
+  .qr-code img {
+    width: 170px;
+  }
+}
